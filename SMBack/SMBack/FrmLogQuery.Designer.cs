@@ -491,6 +491,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dgvLogs);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "FrmLogQuery";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "登录日志查询";

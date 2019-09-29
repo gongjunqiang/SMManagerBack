@@ -9,7 +9,7 @@ namespace Common
     /// <summary>
     /// 通用验证类
     /// </summary>
-    class DataValidate
+    public class DataValidate
     {
         /// <summary>
         /// 匹配整数（必须是正整数）

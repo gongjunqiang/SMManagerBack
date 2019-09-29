@@ -130,10 +130,10 @@
   </data>
   <data name="btnLogin.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAABdSURBVDhPzY4BCsAgDMR8uj/vCHJlruLUwljgKOqlWL7C
-        btnmKel8tEyE3+hiZWvomhmB7nGUIS7PJr1Wj3hpNum1esRLmtxtBLGXa32PZEjJkJIhJYMeVvI7SrkA
-        G1/vNRaHbsAAAAAASUVORK5CYII=
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        wwAADsMBx2+oZAAAAF1JREFUOE/NjgEKwCAMxHy6P+8IcmWu4tTCWOAo6qVYvsJu2eYp6Xy0TITf6GJl
+        a+iaGYHucZQhLs8mvVaPeGk26bV6xEua3G0EsZdrfY9kSMmQkiElgx5W8jtKuQAbX+81FoduwAAAAABJ
+        RU5ErkJggg==
 </value>
   </data>
   <data name="pictureBox1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">

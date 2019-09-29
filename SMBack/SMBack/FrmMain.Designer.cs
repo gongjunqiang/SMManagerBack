@@ -48,7 +48,7 @@
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel2 = new System.Windows.Forms.ToolStripStatusLabel();
-            this.toolStripStatusLabel3 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolAdminName = new System.Windows.Forms.ToolStripStatusLabel();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.btnModifyPwd = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
@@ -194,7 +194,7 @@
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripStatusLabel1,
             this.toolStripStatusLabel2,
-            this.toolStripStatusLabel3});
+            this.toolAdminName});
             this.statusStrip1.Location = new System.Drawing.Point(0, 707);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.Size = new System.Drawing.Size(1264, 22);
@@ -213,11 +213,11 @@
             this.toolStripStatusLabel2.Size = new System.Drawing.Size(80, 17);
             this.toolStripStatusLabel2.Text = "【管理员】：";
             // 
-            // toolStripStatusLabel3
+            // toolAdminName
             // 
-            this.toolStripStatusLabel3.Name = "toolStripStatusLabel3";
-            this.toolStripStatusLabel3.Size = new System.Drawing.Size(26, 17);
-            this.toolStripStatusLabel3.Text = "xxx";
+            this.toolAdminName.Name = "toolAdminName";
+            this.toolAdminName.Size = new System.Drawing.Size(26, 17);
+            this.toolAdminName.Text = "xxx";
             // 
             // splitContainer1
             // 
@@ -258,6 +258,7 @@
             this.btnModifyPwd.Text = "密码修改";
             this.btnModifyPwd.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnModifyPwd.UseVisualStyleBackColor = true;
+            this.btnModifyPwd.Click += new System.EventHandler(this.BtnModifyPwd_Click);
             // 
             // btnExit
             // 
@@ -270,6 +271,7 @@
             this.btnExit.Text = "退出系统";
             this.btnExit.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnExit.UseVisualStyleBackColor = true;
+            this.btnExit.Click += new System.EventHandler(this.BtnExit_Click);
             // 
             // btnInventoryManage
             // 
@@ -282,6 +284,7 @@
             this.btnInventoryManage.Text = "库存管理";
             this.btnInventoryManage.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnInventoryManage.UseVisualStyleBackColor = true;
+            this.btnInventoryManage.Click += new System.EventHandler(this.BtnInventoryManage_Click);
             // 
             // btnLogQuery
             // 
@@ -294,6 +297,7 @@
             this.btnLogQuery.Text = "日志查询";
             this.btnLogQuery.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnLogQuery.UseVisualStyleBackColor = true;
+            this.btnLogQuery.Click += new System.EventHandler(this.BtnLogQuery_Click);
             // 
             // btnProductInventor
             // 
@@ -306,6 +310,7 @@
             this.btnProductInventor.Text = "商品入库";
             this.btnProductInventor.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnProductInventor.UseVisualStyleBackColor = true;
+            this.btnProductInventor.Click += new System.EventHandler(this.BtnProductInventor_Click);
             // 
             // btnSalAnalasys
             // 
@@ -318,6 +323,7 @@
             this.btnSalAnalasys.Text = "销售统计";
             this.btnSalAnalasys.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnSalAnalasys.UseVisualStyleBackColor = true;
+            this.btnSalAnalasys.Click += new System.EventHandler(this.BtnSalAnalasys_Click);
             // 
             // btnProductManage
             // 
@@ -330,6 +336,7 @@
             this.btnProductManage.Text = "商品维护";
             this.btnProductManage.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnProductManage.UseVisualStyleBackColor = true;
+            this.btnProductManage.Click += new System.EventHandler(this.BtnProductManage_Click);
             // 
             // btnAddProduct
             // 
@@ -342,6 +349,7 @@
             this.btnAddProduct.Text = "新增商品";
             this.btnAddProduct.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnAddProduct.UseVisualStyleBackColor = true;
+            this.btnAddProduct.Click += new System.EventHandler(this.BtnAddProduct_Click);
             // 
             // monthCalendar1
             // 
@@ -360,6 +368,8 @@
             this.Name = "FrmMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmMain";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmMain_FormClosing);
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FrmMain_FormClosed);
             this.menuStrip2.ResumeLayout(false);
             this.menuStrip2.PerformLayout();
             this.statusStrip1.ResumeLayout(false);
@@ -394,7 +404,7 @@
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel2;
-        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel3;
+        private System.Windows.Forms.ToolStripStatusLabel toolAdminName;
         private System.Windows.Forms.SplitContainer splitContainer1;
         private System.Windows.Forms.MonthCalendar monthCalendar1;
         private System.Windows.Forms.Button btnModifyPwd;

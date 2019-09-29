@@ -136,6 +136,7 @@
             this.btnClose.Text = "关闭窗口";
             this.btnClose.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.Click += new System.EventHandler(this.BtnClose_Click);
             // 
             // gbInfo
             // 
@@ -246,9 +247,11 @@
             this.Controls.Add(this.gbInfo);
             this.Controls.Add(this.btnSubmit);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "FrmAddProduct";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "[添加新商品]";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmAddProduct_FormClosing);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.gbInfo.ResumeLayout(false);

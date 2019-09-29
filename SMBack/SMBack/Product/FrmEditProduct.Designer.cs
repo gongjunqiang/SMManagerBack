@@ -183,6 +183,7 @@
             this.Controls.Add(this.gbInfo);
             this.Controls.Add(this.btnSubmit);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "FrmEditProduct";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "[修改商品信息]";

@@ -16,5 +16,15 @@ namespace SMBack
         {
             InitializeComponent();
         }
+
+        private void BtnClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void FrmAddProduct_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            FrmMain.frmAddProduct = null;
+        }
     }
 }

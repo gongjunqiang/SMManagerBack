@@ -195,6 +195,7 @@
             this.Controls.Add(this.btnDisable);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.btnModify);
+            this.MaximizeBox = false;
             this.Name = "FrmAdminManage";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "[用户管理]";

@@ -144,6 +144,7 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnSubmit);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "FrmEditAdmin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "[添加新用户]";

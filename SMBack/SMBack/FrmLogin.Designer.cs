@@ -76,6 +76,7 @@
             this.btnCancel.Text = "取 消 ";
             this.btnCancel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.BtnCancel_Click);
             // 
             // label1
             // 
@@ -98,6 +99,7 @@
             this.btnLogin.Text = "登 录 ";
             this.btnLogin.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnLogin.UseVisualStyleBackColor = true;
+            this.btnLogin.Click += new System.EventHandler(this.BtnLogin_Click);
             // 
             // label2
             // 
@@ -115,7 +117,7 @@
             this.txtLoginPwd.PasswordChar = '*';
             this.txtLoginPwd.Size = new System.Drawing.Size(167, 21);
             this.txtLoginPwd.TabIndex = 1;
-            this.txtLoginPwd.Text = "11223344";
+            this.txtLoginPwd.Text = "195814";
             // 
             // pictureBox1
             // 
@@ -127,7 +129,7 @@
             this.pictureBox1.TabIndex = 8;
             this.pictureBox1.TabStop = false;
             // 
-            // Form1
+            // FrmLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -135,7 +137,7 @@
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.groupBox1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "Form1";
+            this.Name = "FrmLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "[系统管理员登录]";
             this.groupBox1.ResumeLayout(false);

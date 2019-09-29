@@ -181,5 +181,19 @@
   <ItemGroup>
     <Folder Include="资源文件\" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BLL\BLL.csproj">
+      <Project>{5b370b3d-cea2-47d3-9b9d-fa50bfce8745}</Project>
+      <Name>BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Common\Common.csproj">
+      <Project>{0e6066b2-c2b6-4796-a667-cb71b37ed807}</Project>
+      <Name>Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Models\Models.csproj">
+      <Project>{980628c5-a733-4b14-a24d-fcdfd14de792}</Project>
+      <Name>Models</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
