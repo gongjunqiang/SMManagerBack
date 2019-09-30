@@ -43,6 +43,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DBHelper\SqlHelper.cs" />
+    <Compile Include="ProductService.cs" />
     <Compile Include="SysAdminService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

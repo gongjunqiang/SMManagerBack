@@ -42,6 +42,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="LoginLogs.cs" />
+    <Compile Include="ProductCategory.cs" />
+    <Compile Include="ProductInventory.cs" />
+    <Compile Include="Products.cs" />
+    <Compile Include="ProductUnit.cs" />
     <Compile Include="SysAdmins.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

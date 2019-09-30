@@ -48,6 +48,8 @@
             this.txtProductId.Name = "txtProductId";
             this.txtProductId.Size = new System.Drawing.Size(163, 21);
             this.txtProductId.TabIndex = 0;
+            this.txtProductId.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TxtProductId_KeyDown);
+            this.txtProductId.Leave += new System.EventHandler(this.TxtProductId_Leave);
             // 
             // btnConfirm
             // 
@@ -60,6 +62,7 @@
             this.btnConfirm.Text = "入库确认";
             this.btnConfirm.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnConfirm.UseVisualStyleBackColor = true;
+            this.btnConfirm.Click += new System.EventHandler(this.BtnConfirm_Click);
             // 
             // label1
             // 
@@ -105,6 +108,7 @@
             this.txtQuantity.Name = "txtQuantity";
             this.txtQuantity.Size = new System.Drawing.Size(84, 21);
             this.txtQuantity.TabIndex = 1;
+            this.txtQuantity.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TxtQuantity_KeyDown);
             // 
             // label4
             // 
@@ -157,6 +161,7 @@
             this.Name = "FrmProductStorage";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "[到货商品入库]";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FrmProductStorage_FormClosed);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);

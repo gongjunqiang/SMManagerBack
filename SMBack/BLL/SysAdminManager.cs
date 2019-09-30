@@ -9,6 +9,9 @@ using Models;
 
 namespace BLL
 {
+    /// <summary>
+    /// 管理员业务类
+    /// </summary>
     public class SysAdminManager
     {
         private SysAdminService adminService = new SysAdminService();

@@ -36,16 +36,27 @@ namespace SMBack
                 frmAddProduct.Activate();//激活最小化的窗体
                 frmAddProduct.WindowState = FormWindowState.Normal;//让最小化的窗体正常显示
             }
-
             FrmStartPoint(frmAddProduct);
         }
         #endregion
 
         #region 商品入库
+
+        public static FrmProductStorage frmProductStorage = null;
         //商品入库
         private void BtnProductInventor_Click(object sender, EventArgs e)
         {
-
+            if (frmProductStorage == null)
+            {
+                frmProductStorage = new FrmProductStorage();
+                frmProductStorage.Show();
+            }
+            else
+            {
+                frmProductStorage.Activate();//激活最小化的窗体
+                frmProductStorage.WindowState = FormWindowState.Normal;//让最小化的窗体正常显示
+            }
+            FrmStartPoint(frmProductStorage);
         }
         #endregion
 

@@ -105,6 +105,7 @@
             this.btnLock.TabIndex = 13;
             this.btnLock.Text = "锁定";
             this.btnLock.UseVisualStyleBackColor = true;
+            this.btnLock.Click += new System.EventHandler(this.BtnLock_Click);
             // 
             // cboUnit
             // 
@@ -236,6 +237,7 @@
             this.btnSubmit.Text = "添加商品";
             this.btnSubmit.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnSubmit.UseVisualStyleBackColor = true;
+            this.btnSubmit.Click += new System.EventHandler(this.BtnSubmit_Click);
             // 
             // FrmAddProduct
             // 

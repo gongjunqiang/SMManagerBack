@@ -42,6 +42,7 @@ namespace DAL
             }
             catch (Exception ex)
             {
+                WriteErrorLog(ex.Message);
                 throw ex;
             }
             finally
@@ -78,6 +79,7 @@ namespace DAL
             }
             catch (Exception ex)
             {
+                WriteErrorLog(ex.Message);
                 throw ex;
             }
             finally
@@ -118,6 +120,8 @@ namespace DAL
                 {
                     conn.Close();
                 }
+
+                WriteErrorLog(ex.Message);
                 throw ex;
             }
         }
@@ -177,6 +181,7 @@ namespace DAL
             }
             catch (Exception ex)
             {
+                WriteErrorLog(ex.Message);
                 throw ex;
             }
             finally
@@ -212,6 +217,7 @@ namespace DAL
             }
             catch (Exception ex)
             {
+                WriteErrorLog(ex.Message);
                 throw ex;
             }
             finally
@@ -251,6 +257,7 @@ namespace DAL
                 {
                     cmd.Transaction.Rollback();//执行失败回滚事务
                 }
+                WriteErrorLog(ex.Message);
                 throw ex;
             }
             finally
@@ -302,6 +309,7 @@ namespace DAL
                 {
                     cmd.Transaction.Rollback();//执行失败回滚事务
                 }
+                WriteErrorLog(ex.Message);
                 throw ex;
             }
             finally
@@ -325,9 +333,8 @@ namespace DAL
             FileStream fs = new FileStream("Error.Log",FileMode.Append);
             StreamWriter sw = new StreamWriter(fs);
             sw.Write("【"+GetDbServerTime()+"】:"+msg+"\r\n");
+            sw.Close();
         }
-
-
         #endregion
     }
 }
