@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Models;
 using DAL;
+using System.Data;
 
 namespace BLL
 {
@@ -73,5 +74,38 @@ namespace BLL
             return productService.ProductInventory(productId, addedCount);
         }
         #endregion
+
+        #region 商品管理
+        /// <summary>
+        /// 商品组合查询
+        /// </summary>
+        /// <param name="productId"></param>
+        /// <param name="productName"></param>
+        /// <param name="categoryId"></param>
+        /// <returns></returns>
+        public DataTable QueryProductInventoryInfo(string productId, string productName, string categoryId)
+        {
+            if (categoryId != "-1")
+            {
+                return productService.QueryProductInventoryInfo(productId, productName, categoryId);
+            }
+            else
+            {
+                return productService.QueryProductInventoryInfo(productId, productName, "");
+            }
+        }
+        #endregion
+
+        #region 商品库存管理
+        /// <summary>
+        /// 查询商品库存预警信息
+        /// </summary>
+        /// <returns></returns>
+        public DataTable QueryWarningInfo(out int totalCount, out int maxCount, out int minCount)
+        {
+            return productService.QueryWarningInfo(out totalCount, out maxCount, out minCount);
+        }
+        #endregion
+
     }
 }

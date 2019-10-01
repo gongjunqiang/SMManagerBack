@@ -85,6 +85,7 @@
             this.btnClose.Text = "关闭窗口";
             this.btnClose.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.Click += new System.EventHandler(this.BtnClose_Click);
             // 
             // txtDiscount
             // 
@@ -176,6 +177,7 @@
             this.btnQuery.Text = "提交查询";
             this.btnQuery.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnQuery.UseVisualStyleBackColor = true;
+            this.btnQuery.Click += new System.EventHandler(this.BtnQuery_Click);
             // 
             // txtProductName
             // 
@@ -315,6 +317,7 @@
             this.dgvProduct.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
             this.dgvProduct.Size = new System.Drawing.Size(694, 398);
             this.dgvProduct.TabIndex = 31;
+            this.dgvProduct.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.DgvProduct_RowPostPaint);
             // 
             // groupBox1
             // 
@@ -352,6 +355,7 @@
             this.Name = "FrmProductManage";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "[商品信息维护]";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FrmProductManage_FormClosed);
             ((System.ComponentModel.ISupportInitialize)(this.dgvProduct)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

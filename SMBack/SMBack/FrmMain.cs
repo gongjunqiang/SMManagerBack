@@ -61,18 +61,40 @@ namespace SMBack
         #endregion
 
         #region 库存管理
+        public static FrmInventoryManage InventoryManage = null;
         //库存管理
         private void BtnInventoryManage_Click(object sender, EventArgs e)
         {
-
+            if (InventoryManage == null)
+            {
+                InventoryManage = new FrmInventoryManage();
+                InventoryManage.Show();
+            }
+            else
+            {
+                InventoryManage.Activate();//激活最小化的窗体
+                InventoryManage.WindowState = FormWindowState.Normal;//让最小化的窗体正常显示
+            }
+            FrmStartPoint(InventoryManage);
         }
         #endregion
 
         #region 商品维护
+        public static FrmProductManage frmProductManage = null;
         //商品维护
         private void BtnProductManage_Click(object sender, EventArgs e)
         {
-
+            if (frmProductManage == null)
+            {
+                frmProductManage = new FrmProductManage();
+                frmProductManage.Show();
+            }
+            else
+            {
+                frmProductManage.Activate();//激活最小化的窗体
+                frmProductManage.WindowState = FormWindowState.Normal;//让最小化的窗体正常显示
+            }
+            FrmStartPoint(frmProductManage);
         }
         #endregion
 
@@ -85,10 +107,21 @@ namespace SMBack
         #endregion
 
         #region 日志查询
+        public static FrmLogQuery logQuery = null;
         //日志查询
         private void BtnLogQuery_Click(object sender, EventArgs e)
         {
-
+            if (logQuery == null)
+            {
+                logQuery = new FrmLogQuery();
+                logQuery.Show();
+            }
+            else
+            {
+                logQuery.Activate();//激活最小化的窗体
+                logQuery.WindowState = FormWindowState.Normal;//让最小化的窗体正常显示
+            }
+            FrmStartPoint(logQuery);
         }
 
         #endregion

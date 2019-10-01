@@ -1,9 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Data;
 using Models;
 
 
@@ -152,6 +150,122 @@ namespace DAL
         }
 
 
+        #endregion
+
+        #region 商品管理
+        /// <summary>
+        /// 商品组合查询
+        /// </summary>
+        /// <param name="productId"></param>
+        /// <param name="productName"></param>
+        /// <param name="categoryId"></param>
+        /// <returns></returns>
+        public DataTable QueryProductInventoryInfo(string productId,string productName,string categoryId)
+        {
+            string sql = "select ProductId,ProductName,Unit,UnitPrice,Discount,TotalCount,MaxCount,MinCount,InventoryStatus,CategoryId,CategoryName";
+            sql += " from view_QueryInventoryInfo where 1=1";
+            if (productId.Length != 0)
+            {
+                sql += string.Format(" and ProductId = '{0}'", productId);
+
+            }
+
+            if (productName.Length != 0)
+            {
+                sql += string.Format(" and productName like '%{0}%'", productName);
+            }
+
+            if (categoryId.Length != 0)
+            {
+                sql += string.Format(" and categoryId = {0}", categoryId);
+            }
+
+            try
+            {
+                return SqlHelper.GetDataSet(sql).Tables[0];
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+        #endregion
+
+        #region 商品库存管理
+        /// <summary>
+        /// 查询商品库存预警信息
+        /// </summary>
+        /// <returns></returns>
+        public DataTable QueryWarningInfo(out int totalCount, out int maxCount, out int minCount)
+        {
+            SqlParameter outTotalCount = new SqlParameter("@TotalCount",SqlDbType.Int);
+            outTotalCount.Direction = ParameterDirection.Output;
+            SqlParameter outMaxCount = new SqlParameter("@MaxCount", SqlDbType.Int);
+            outMaxCount.Direction = ParameterDirection.Output;
+            SqlParameter outMinCount = new SqlParameter("@MinCount", SqlDbType.Int);
+            outMinCount.Direction = ParameterDirection.Output;
+            SqlParameter[] sqlParameters = new SqlParameter[]
+            {
+                outTotalCount,outMaxCount,outMinCount
+            };
+
+            try
+            {
+                DataSet ds = SqlHelper.GetDataSet("usp_QueryWarningInfo", sqlParameters, null, true);
+                totalCount = Convert.ToInt32( outTotalCount.Value);
+                maxCount = Convert.ToInt32(outMaxCount.Value); 
+                minCount = Convert.ToInt32(outMinCount.Value);
+                return ds.Tables[0];
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+        #endregion
+
+        #region 日志查询
+        public DataTable QueryLogInfo(int pageSize,int currentPage,string beginTime, string endTime,out int totalount)
+        {
+            SqlParameter[] sqlParameters = new SqlParameter[]
+            {
+                new SqlParameter("@PageSize",pageSize),
+                new SqlParameter("@CurrentPage",currentPage),
+                new SqlParameter("@BeginTime",beginTime),
+                new SqlParameter("@EndTime",endTime),
+            };
+           
+            try
+            {
+                DataSet ds = SqlHelper.GetDataSet("usp_LogDataPager", sqlParameters, null, true);
+                totalount = Convert.ToInt32(ds.Tables[1].Rows[0][0]);
+                return ds.Tables[0];
+                //List<LoginLogs> list = new List<LoginLogs>();
+                //SqlDataReader reader = SqlHelper.ExecuteReader("usp_LogDataPager", sqlParameters, true);
+                //while (reader.Read())
+                //{
+                //    list.Add(new LoginLogs
+                //    {
+                //        LogId = Convert.ToInt32(reader["LogId"]),
+                //        LoginId = Convert.ToInt32(reader["LoginId"]),
+                //        SPName = reader["SPName"].ToString(),
+                //        LoginTime = Convert.ToDateTime(reader["LoginTime"]),
+                //        ExitTime = Convert.ToDateTime(reader["ExitTime"]),
+                //    });
+                //}
+                //if (reader.NextResult())
+                //{
+                //    count = Convert.ToInt32(reader["totalount"]);
+                //}
+                //reader.Close();
+                //totalount = count;
+                //return list;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
         #endregion
     }
 }

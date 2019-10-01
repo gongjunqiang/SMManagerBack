@@ -11,6 +11,7 @@ namespace Models
     [Serializable]
     public class LoginLogs
     {
+        public int LogId { get; set; }
         public int LoginId { get; set; }
         public string SPName { get; set; }
         public string ServerName { get; set; }
